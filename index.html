@@ -1,1 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VUVUYA Asset Management Solutions</title>
+
+https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--primary:#062544;
+--secondary:#00A651;
+--light:#f7f9fc;
+--dark:#02182f;
+}
+
+body{
+line-height:1.6;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(6,37,68,0.96);
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:white;
+}
+
+.logo span{
+color:var(--secondary);
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--secondary);
+}
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+
+.menu-toggle span{
+width:28px;
+height:3px;
+background:white;
+border-radius:5px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1900&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 10%;
+color:white;
+}
+
+.hero h1{
+font-size:70px;
+line-height:1;
+margin-bottom:25px;
+}
+
+.hero h1 span{
+color:var(--secondary);
+}
+
+.hero p{
+font-size:22px;
+max-width:650px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+background:var(--secondary);
+color:white;
+padding:16px 35px;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+}
+
+.section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:42px;
+color:var(--primary);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:var(--primary);
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+padding:30px;
+text-align:center;
+border-radius:10px;
+}
+
+.stat h3{
+font-size:45px;
+color:var(--secondary);
+}
+
+/* DARK SECTION */
+
+.dark{
+background:var(--primary);
+color:white;
+}
+
+.dark h2{
+color:white;
+}
+
+/* PRICING */
+
+.price{
+font-size:45px;
+font-weight:bold;
+color:var(--secondary);
+margin:15px 0;
+}
+
+.price-card{
+text-align:center;
+}
+
+.price-card ul{
+list-style:none;
+}
+
+.price-card li{
+padding:8px;
+}
+
+/* CONTACT */
+
+.contact-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-info{
+background:var(--primary);
+color:white;
+padding:40px;
+border-radius:15px;
+}
+
+.contact-info h3{
+margin-bottom:20px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+background:var(--secondary);
+border:none;
+color:white;
+padding:15px 30px;
+border-radius:40px;
+cursor:pointer;
+font-size:16px;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 25px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:flex;
+}
+
+.nav-links{
+position:absolute;
+top:75px;
+left:0;
+width:100%;
+background:var(--primary);
+flex-direction:column;
+display:none;
+padding:20px 0;
+text-align:center;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.hero{
+text-align:center;
+padding:0 25px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+}
+
+.section{
+padding:80px 20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+<span>V</span>UVUYA
+</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<ul class="nav-links" id="nav-links">
+<li>#homeHome</a></li>
+<li>#featuresFeatures</a></li>
+<li>#industriesIndustries</a></li>
+<li>#pricingPricing</a></li>
+<li>#contactContact</a></li>
+</ul>
+
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div>
+
+<h1>
+SMARTER MAINTENANCE<br>
+<span>STRONGER OPERATIONS</span>
+</h1>
+
+<p>
+Manage assets, maintenance, inspections and work orders from one powerful cloud platform.
+</p>
+
+#contact
+Book Free Demo
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<h2>Why Choose VUVUYA?</h2>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>99%</h3>
+<p>Asset Visibility</p>
+</div>
+
+<div class="stat">
+<h3>35%</h3>
+<p>Cost Reduction</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Cloud Access</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Mobile Ready</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="features">
+
+<div class="section-title">
+<h2>Features</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Asset Tracking</h3>
+<p>Track all equipment, vehicles, buildings and facilities.</p>
+</div>
+
+<div class="card">
+<h3>Preventive Maintenance</h3>
+<p>Reduce breakdowns with scheduled maintenance plans.</p>
+</div>
+
+<div class="card">
+<h3>Work Orders</h3>
+<p>Create, assign and monitor maintenance jobs.</p>
+</div>
+
+<div class="card">
+<h3>QR Code Scanning</h3>
+<p>Instant access to asset information in the field.</p>
+</div>
+
+<div class="card">
+<h3>Reports & Analytics</h3>
+<p>Powerful dashboards and KPI reporting.</p>
+</div>
+
+<div class="card">
+<h3>Mobile Access</h3>
+<p>Access the platform from any device.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section dark" id="industries">
+
+<div class="section-title">
+<h2>Industries We Serve</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Hotels & Lodges</h3>
+</div>
+
+<div class="card">
+<h3>Hospitals & Healthcare</h3>
+</div>
+
+<div class="card">
+<h3>Property Management</h3>
+</div>
+
+<div class="card">
+<h3>Schools & Universities</h3>
+</div>
+
+<div class="card">
+<h3>Municipalities</h3>
+</div>
+
+<div class="card">
+<h3>Manufacturing</h3>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="pricing">
+
+<div class="section-title">
+<h2>Pricing Plans</h2>
+</div>
+
+<div class="grid">
+
+<div class="card price-card">
+
+<h3>Starter</h3>
+
+<div class="price">R1 499</div>
+
+<ul>
+<li>Up to 200 Assets</li>
+<li>Email Support</li>
+<li>Dashboard Access</li>
+<li>Mobile Access</li>
+</ul>
+
+</div>
+
+<div class="card price-card">
+
+<h3>Business</h3>
+
+<div class="price">R3 999</div>
+
+<ul>
+<li>2 000 Assets</li>
+<li>QR Codes</li>
+<li>Work Orders</li>
+<li>Priority Support</li>
+</ul>
+
+</div>
+
+<div class="card price-card">
+
+<h3>Enterprise</h3>
+
+<div class="price">Custom</div>
+
+<ul>
+<li>Unlimited Assets</li>
+<li>Multi-site Management</li>
+<li>Training Included</li>
+<li>Dedicated Support</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<div class="section-title">
+<h2>Book A Free Demo</h2>
+</div>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<h3>Contact Information</h3>
+
+<p>📞 +27 69 654 0717</p>
+
+<br>
+
+<p>📧 vuvuyaenterprises@gmail.com</p>
+
+<br>
+
+<p>🌍 South Africa</p>
+<p>🌍 Botswana</p>
+<p>🌍 Zimbabwe</p>
+
+</div>
+
+<div>
+
+https://formsubmit.co/vuvuyaenterprises@gmail.com
+
+<input type="hidden" name="_subject" value="New Website Enquiry">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="tel" name="phone" placeholder="Phone Number">
+
+<input type="text" name="company" placeholder="Company Name">
+
+<select name="interest">
+<option>Request Demo</option>
+<option>Asset Management</option>
+<option>Property Management</option>
+<option>Maintenance Management</option>
+</select>
+
+<textarea name="message" rows="6" placeholder="Tell us about your requirements"></textarea>
+
+<button type="submit">
+Send Enquiry
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>VUVUYA Asset Management Solutions</h3>
+
+<p>People | Assets | A Smarter Tomorrow</p>
+
+<p>+27 69 654 0717 | vuvuyaenterprises@gmail.com</p>
+
+<p>Serving Southern Africa and Beyond</p>
+
+</footer>
+
+https://wa.me/27696540717
+WhatsApp Us
+</a>
+
+<script>
+
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+menuToggle.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+link.addEventListener('click', () => {
+navLinks.classList.remove('active');
+});
+});
+
+</script>
+
+</body>
+</html>
 
